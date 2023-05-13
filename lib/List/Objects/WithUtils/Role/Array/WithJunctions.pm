@@ -2,15 +2,16 @@ package List::Objects::WithUtils::Role::Array::WithJunctions;
 
 use strictures 2;
 
-use List::Objects::WithUtils::Array::Junction ();
 
 use Role::Tiny;
 
 sub any_items {
+  require List::Objects::WithUtils::Array::Junction;
   List::Objects::WithUtils::Array::Junction::Any->new( @{ $_[0] } )
 }
 
 sub all_items {
+  require List::Objects::WithUtils::Array::Junction;
   List::Objects::WithUtils::Array::Junction::All->new( @{ $_[0] } )
 }
 
